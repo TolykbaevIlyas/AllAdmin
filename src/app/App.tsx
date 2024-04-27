@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Authorization } from "../pages/Authorization"
 import { Registartion } from "../pages/Registration"
-
 const App = () => {
   return (
     <BrowserRouter>
