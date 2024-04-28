@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const Registration: React.FC = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState<string>('');
@@ -16,8 +17,9 @@ const Registration: React.FC = () => {
     }
 
     try {
-      const response = await axios.post('/api/register', {
+      const response = await axios.post('https://all-admin-back.vercel.app/api/register', {
         username,
+        email,
         password
       });
 
@@ -38,6 +40,14 @@ const Registration: React.FC = () => {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div>
