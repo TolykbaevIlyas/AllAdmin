@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import axios from 'axios';
 
 const Authorization: React.FC = () => {
@@ -6,11 +6,17 @@ const Authorization: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string>('');
 
+  useEffect(()=>{
+    axios.get('https://all-admin-back.vercel.app/api').then(function (response) {
+      console.log(response);
+    });
+  },[])
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     try {
-      const response = await axios.post('https://all-admin-back.vercel.app/api/login', {
+      const response = await axios.post('https://all-admin-back.vercel.app/api/test', {
         username,
         password
       }, {
