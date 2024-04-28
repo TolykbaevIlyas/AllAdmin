@@ -10,7 +10,7 @@ const Authorization: React.FC = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('https://all-admin-back-oacsajb8n-tolykbaevilyas-projects.vercel.app/api/login', {
+      const response = await axios.post('https://all-admin-back.vercel.app/api/login', {
         username,
         password
       }, {
